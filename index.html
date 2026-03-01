@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +8,15 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <div class="app-container">
+        <!-- Dark / Light Mode Toggle -->
+        <button id="theme-toggle" title="Toggle dark/light mode">
+            <span id="theme-icon">☀️</span>
+            <span id="theme-label">Light</span>
+        </button>
+
         <!-- Start Screen -->
         <div id="start-screen" class="screen active">
             <h1>Quiz Master</h1>
@@ -22,13 +30,13 @@
                 <span id="question-counter">Question 1/5</span>
                 <span id="score-display">Score: 0</span>
             </div>
-            
+
             <div class="progress-bar-container">
                 <div id="progress-bar"></div>
             </div>
 
             <h2 id="question-text">Question goes here...</h2>
-            
+
             <div id="options-container" class="options-grid">
                 <!-- Options will be injected here by JS -->
             </div>
@@ -55,4 +63,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>

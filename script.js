@@ -1,3 +1,30 @@
+// ── Dark / Light Mode Toggle ──────────────────────────────────────────────────
+const themeToggle = document.getElementById('theme-toggle');
+const themeIcon = document.getElementById('theme-icon');
+const themeLabel = document.getElementById('theme-label');
+
+function applyTheme(isLight) {
+    if (isLight) {
+        document.body.classList.add('light-mode');
+        themeIcon.textContent = '🌙';
+        themeLabel.textContent = 'Dark';
+    } else {
+        document.body.classList.remove('light-mode');
+        themeIcon.textContent = '☀️';
+        themeLabel.textContent = 'Light';
+    }
+}
+
+// Restore saved preference (default: dark)
+const savedTheme = localStorage.getItem('quizTheme');
+applyTheme(savedTheme === 'light');
+
+themeToggle.addEventListener('click', () => {
+    const isNowLight = !document.body.classList.contains('light-mode');
+    applyTheme(isNowLight);
+    localStorage.setItem('quizTheme', isNowLight ? 'light' : 'dark');
+});
+
 // No state maintained in JS anymore! Python handles all the logic.
 
 // DOM Elements
