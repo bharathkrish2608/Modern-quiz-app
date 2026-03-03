@@ -1,67 +1,69 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Modern Quiz Application</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
-</head>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<body>
+  <body>
+    <!-- Dark / Light Mode Toggle -->
+    <button id="theme-toggle" title="Toggle dark/light mode">
+      <span id="theme-icon">☀️</span>
+      <span id="theme-label">Light</span>
+    </button>
     <div class="app-container">
-        <!-- Dark / Light Mode Toggle -->
-        <button id="theme-toggle" title="Toggle dark/light mode">
-            <span id="theme-icon">☀️</span>
-            <span id="theme-label">Light</span>
-        </button>
+      <!-- Start Screen -->
+      <div id="start-screen" class="screen active">
+        <h1>Quiz Master</h1>
+        <p>Test your knowledge with these 5 questions!</p>
+        <button id="start-btn" class="primary-btn">Start Quiz</button>
+      </div>
 
-        <!-- Start Screen -->
-        <div id="start-screen" class="screen active">
-            <h1>Quiz Master</h1>
-            <p>Test your knowledge with these 5 questions!</p>
-            <button id="start-btn" class="primary-btn">Start Quiz</button>
+      <!-- Quiz Screen -->
+      <div id="quiz-screen" class="screen">
+        <div class="header">
+          <span id="question-counter">Question 1/5</span>
+          <span id="score-display">Score: 0</span>
         </div>
 
-        <!-- Quiz Screen -->
-        <div id="quiz-screen" class="screen">
-            <div class="header">
-                <span id="question-counter">Question 1/5</span>
-                <span id="score-display">Score: 0</span>
-            </div>
-
-            <div class="progress-bar-container">
-                <div id="progress-bar"></div>
-            </div>
-
-            <h2 id="question-text">Question goes here...</h2>
-
-            <div id="options-container" class="options-grid">
-                <!-- Options will be injected here by JS -->
-            </div>
-
-            <div id="feedback-container" class="hidden">
-                <p id="feedback-text"></p>
-                <button id="next-btn" class="primary-btn hidden">Next Question</button>
-            </div>
+        <div class="progress-bar-container">
+          <div id="progress-bar"></div>
         </div>
 
-        <!-- Result Screen -->
-        <div id="result-screen" class="screen">
-            <h1>Quiz Completed! 🎉</h1>
-            <div class="score-card">
-                <div class="circular-progress">
-                    <span id="final-percentage">0%</span>
-                </div>
-                <p id="final-score">You scored 0 out of 5</p>
-            </div>
-            <h2 id="performance-message">Performance Message</h2>
-            <button id="restart-btn" class="primary-btn">Play Again</button>
+        <h2 id="question-text">Question goes here...</h2>
+
+        <div id="options-container" class="options-grid">
+          <!-- Options will be injected here by JS -->
         </div>
+
+        <div id="feedback-container" class="hidden">
+          <p id="feedback-text"></p>
+          <button id="next-btn" class="primary-btn hidden">
+            Next Question
+          </button>
+        </div>
+      </div>
+
+      <!-- Result Screen -->
+      <div id="result-screen" class="screen">
+        <h1>Quiz Completed! 🎉</h1>
+        <div class="score-card">
+          <div class="circular-progress">
+            <span id="final-percentage">0%</span>
+          </div>
+          <p id="final-score">You scored 0 out of 5</p>
+        </div>
+        <h2 id="performance-message">Performance Message</h2>
+        <button id="restart-btn" class="primary-btn">Play Again</button>
+      </div>
     </div>
 
     <script src="script.js"></script>
-</body>
-
+  </body>
 </html>
